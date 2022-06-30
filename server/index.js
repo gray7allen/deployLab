@@ -17,10 +17,26 @@ try {
     nonExistentFunction();
   } catch (error) {
     rollbar.info('catch try error')
-    rollbar.error('Error Error Error')
-    rollbar.critcal('explosion')
+  }
+
+try {
+    nonExistentFunction2();
+  } catch (error) {
     rollbar.warning('Warning Warning Warning')
   }
+
+try {
+    nonExistentFunction3();
+  } catch (error) {
+    rollbar.error('Error Error Error')
+  }
+
+try {
+    nonExistentFunction4();
+  } catch (error) {
+    rollbar.critcal('explosion')
+  }
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'))
