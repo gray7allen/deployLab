@@ -16,7 +16,10 @@ rollbar.log('Hello world!')
 try {
     nonExistentFunction();
   } catch (error) {
-    rollbar.info('catch try error');
+    rollbar.info('catch try error')
+    rollbar.error('Error Error Error')
+    rollbar.critcal('explosion')
+    rollbar.warning('Warning Warning Warning')
   }
 
 app.get('/', (req, res) => {
