@@ -34,7 +34,7 @@ try {
 try {
     nonExistentFunction4();
   } catch (error) {
-    rollbar.critcal('explosion')
+    rollbar.critical('explosion')
   }
 
 
