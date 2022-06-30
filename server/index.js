@@ -3,6 +3,21 @@ const path = require('path')
 
 const app = express()
 
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: 'dfd18e3154814152b56d702ac6107ce6',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+rollbar.log('Hello world!')
+
+try {
+    nonExistentFunction();
+  } catch (error) {
+    console.error(error);
+  }
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'))
 })
